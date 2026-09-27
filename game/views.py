@@ -5,6 +5,8 @@ from django.core.paginator import Paginator
 from .forms import RegistrationForm
 from django.conf import settings
 
+stripe.api_key = settings.STRIPE_SECRET_KEY
+
 def home_page(request):
     games = Game.objects.all()[:6]
     return render(request, "home.html", {"games" : games, })
@@ -76,24 +78,56 @@ def toggle_cart(request, key):
     return redirect(request.META["HTTP_REFERER"])
 
 def payment(request):
-    stripe.api_key = settings.STRIPE_SECRET_KEY
-    payment = stripe.checkout.Session.create(
-        line_items=[{
-            "price_data":{
-                "currency": "cad",
-                "product_data": {"name": "Game"},
-                "unit_amount": 200,
-            },
-        "quantity": 1,
-        }],
-        payment_method_types = ["card"],
-        success_url = "http://127.0.0.1:8000/success",
-        cancel_url = "http://127.0.0.1:8000/cart",
-        mode = "payment",
+    if not request.user.is_authenticated:
+        return redirect("/login")
+
+    cart_items = Cart.objects.filter(user=request.user).select_related("game")
+    if not cart_items:
+        return redirect("/cart")
+
+    line_items = []
+    for item in cart_items:
+        if item.game.price > 0:
+            line_items.append({
+                "price_data": {
+                    "currency": "cad",
+                    "product_data": {"name": item.game.name},
+                    "unit_amount": int(item.game.price * 100),
+                },
+                "quantity": 1,
+            })
+            
+    if not line_items:
+        cart_items.delete()
+        return redirect("/")
+
+    session = stripe.checkout.Session.create(
+        line_items=line_items,
+        payment_method_types=["card"],
+        mode="payment",
+        client_reference_id=str(request.user.id),
+        metadata={"game_ids": ",".join(str(item.game.id) for item in cart_items)},
+        success_url=request.build_absolute_uri("/success") + "?session_id={CHECKOUT_SESSION_ID}",
+        cancel_url=request.build_absolute_uri("/cart"),
     )
-    print(payment.url)
-    return redirect(payment.url)
+    return redirect(session.url)
+
 
 def success(request):
-    Cart.objects.filter(user=request.user).delete()
+    if not request.user.is_authenticated:
+        return redirect("/login")
+
+    session_id = request.GET.get("session_id")
+    if not session_id:
+        return redirect("/cart")
+
+    try:
+        session = stripe.checkout.Session.retrieve(session_id)
+    except stripe.StripeError:
+        return redirect("/cart")
+
+    if session.payment_status == "paid" and session.client_reference_id == str(request.user.id):
+        game_ids = session.metadata["game_ids"].split(",")
+        Cart.objects.filter(user=request.user, game_id__in=game_ids).delete()
+
     return redirect("/")
