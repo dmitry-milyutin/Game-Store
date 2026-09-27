@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %}
+All Games
+{% endblock %}
+
+{% block content %}
+
+<div class="search_games">
+    <form method="GET">
+        <input type="number" value="{{category}}" name="category" hidden>
+        <label for="search">Search Games</label>
+        <input type="text" value="{{game}}" id="search" placeholder="Search by name" name="search" required>
+        <button type="submit">Search</button>
+    </form>
+</div>
+
+<div class="all_categories">
+    {% for i in categories %}
+        <a class="{% if i.id == category %} active_category {% endif %}" href="?category={{i.id}}&search={{game}}" >{{i}}</a>
+    {% endfor %}
+</div>
+
+<div class="all_games">
+    <h2>All Games</h2>
+    <div class="games_row">
+        {% for game in games %}
+        <div class="game_card">
+            <a href="cart/{{game.id}}">
+                <img src="{% static 'img/263142 (1).png' %}" class="addtocart">
+            </a>
+            <a href="/game/{{game.id}}" >
+                <h3>{{ game.name }}</h3>
+            </a>
+            <img src="{{ game.image.url }}" alt="No Image Found">
+            {% if game.price > 0 %}
+                {% if game.prev_price != game.price %}
+                <div class="prevprice">
+                    ${{ game.prev_price }}
+                </div>
+                <div class="newprice">
+                    ${{ game.price }}
+                </div>
+                {% else %}
+                <div class="newprice">
+                    ${{ game.price }}
+                </div>
+                {% endif %}
+            {% else %}
+                <div class="newprice">
+                    FREE
+                </div>
+            {% endif %}
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
+<div class="pagination">
+    {% if games.has_previous %}
+        <div class="previouspage">
+            <a href="?page={{games.previous_page_number}}">Previous Page</a>
+        </div>
+    {% endif %}
+
+    {% if games.has_next %}
+        <div class="nextpage">
+            <a href="?page={{games.next_page_number}}">Next Page</a>
+        </div>
+        <div class="lastpage">
+            <a href="?page={{games.paginator.num_pages}}">Last</a>
+        </div>
+    {% endif %}
+</div>
+
+{% endblock %}

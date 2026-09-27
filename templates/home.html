@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+
+
+<div class="top_picks">
+    <h2>Top Picks</h2>
+    <div class="games_row">
+        {% for game in games %}
+        <div class="game_card">
+            <a href="cart/{{game.id}}">
+                <img src="{% static 'img/263142 (1).png' %}" class="addtocart">
+            </a>
+            <a href="/game/{{game.id}}" >
+                <h3>{{ game.name }}</h3>
+            </a>
+            <img src="{{game.image.url}}" alt="No Image Found">
+            {% if game.price > 0 %}
+                <div class="prevprice">
+                    ${{game.prev_price}}
+                </div>
+                <div class="newprice">
+                    ${{game.price}}
+                </div>
+            {% else %}
+                <div class="newprice">
+                    FREE
+                </div>
+            {% endif %}
+            </div>
+        {% endfor %}
+</div>
+
+<div class="content">
+    <div class="welcome_text">
+        <h1>Welcome to Playtica</h1>
+        <p>Your ultimate PC gaming destination. Explore top games, unbeatable deals, and exclusive rewards!</p>
+    </div>
+
+    <div class="why_us">
+        <h2>Why Choose Playtica?</h2>
+        <div class="low_prices">
+            <h3>Low Prices</h3>
+            <p>Get access to the best games at unbeatable prices. Check out our discounts today!</p>
+        </div>
+        <div class="hot_deals">
+            <h3>Hot Deals!</h3>
+            <p>Save up to 70% on selected games this week. Don't miss out!</p>
+        </div>
+        <div class="rewards">
+            <h3>Rewards</h3>
+            <p>Earn points with every purchase and unlock exclusive perks and free games.</p>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

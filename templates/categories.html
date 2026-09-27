@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %}
+Categories
+{% endblock %}
+
+{% block content %}
+<div class="categories">
+    <h1 class="categories_title">Categories</h1>
+    <ul>
+        {% for category in categories %}
+            <li><a href="/gamesearch?category={{ category.id }}">{{ category.name }}</a></li>
+        {% endfor %}
+    </ul>
+</div>
+
+{% endblock %}

@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %}Cart{% endblock %}
+
+{% block content %}
+<div class="check">
+    <h2>Checkout Summary</h2>
+    <p><strong>Number of Games:</strong> {{ amount }}</p>
+    {% if amount > 0 %}
+        <p><strong>Final Price:</strong> ${{ price }}</p>
+        <a href="/payment" class="checkout">Proceed to Checkout</a>
+    {% else %}
+        <p><strong>Final Price:</strong> BASKET EMPTY</p>
+    {% endif %}
+
+</div><br>
+
+{% for saved in games %}
+<div class="game_card">
+    <a href="/cart/{{saved.game.id}}">
+        <img src="{% static 'img/1828843.png' %}" class="remove">
+    </a>
+    <a href="/game/{{saved.game.id}}" >
+        <h3>{{ saved.game.name }}</h3>
+    </a>
+    <img src="{{ saved.game.image.url }}" alt="No Image Found">
+    {% if saved.game.price > 0 %}
+        {% if saved.game.prev_price != saved.game.price %}
+        <div class="prevprice">
+            ${{ saved.game.prev_price }}
+        </div>
+        <div class="newprice">
+            ${{ saved.game.price }}
+        </div>
+        {% else %}
+        <div class="newprice">
+            ${{ saved.game.price }}
+        </div>
+        {% endif %}
+    {% else %}
+        <div class="newprice">
+            FREE
+        </div>
+    {% endif %}
+    </div>
+{% endfor %}
+
+{% endblock %}

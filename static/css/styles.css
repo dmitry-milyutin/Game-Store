@@ -1,0 +1,353 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.navigation {
+    background-color: #222;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.navigation a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.navigation a:hover {
+    text-decoration: underline;
+}
+
+.navigation form{
+    display: inline-block;
+}
+
+.navigation button{
+    background: none;
+    border: none;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.navigation button:hover{
+    text-decoration: underline;
+}
+
+.welcome_text h1 {
+    font-size: 2.5em;
+    color: #222;
+}
+
+.welcome_text p {
+    font-size: 1.2em;
+    margin-top: 10px;
+    line-height: 1.6;
+}
+
+.why_us {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.why_us h2 {
+    font-size: 2em;
+    color: #444;
+}
+
+.why_us > div {
+    display: inline-block;
+    width: 30%;
+    margin: 1%;
+    padding: 20px;
+    background-color: #e9f7f7;
+    border: 1px solid #bce4e4;
+    border-radius: 8px;
+}
+
+.why_us h3 {
+    margin-bottom: 10px;
+    color: #006666;
+}
+
+
+.why_us p {
+    font-size: 1em;
+    color: #333;
+    line-height: 1.5;
+}
+
+.top_picks {
+    margin: 20px;
+    text-align: center;
+}
+
+.top_picks h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.games_row {
+    display: flex;
+    justify-content: space-around;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.game_card {
+    display: inline-block;
+    width: 180px;
+    text-align: center;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    text-decoration: none;
+}
+
+.game_card h3{
+    font-size: 16px;
+    margin-bottom: 10px;
+    text-decoration: none;
+    color: #333;
+}
+
+.game_card img {
+    width: 170px;
+    height: 210px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.newprice {
+    color: green;
+    font-weight: bold; 
+    font-size: 1.2em; 
+}
+
+.prevprice {
+    color: red;
+    font-weight: bold; 
+    text-decoration: line-through; 
+    font-size: 1em; 
+}
+
+.all_games h2{
+    text-align: center
+}
+
+.categories {
+    font-family: 'Arial', sans-serif; 
+    background-color: #f9f9f9; 
+    border: 1px solid #ddd;
+    border-radius: 8px; 
+    padding: 20px; 
+    margin: 20px auto; 
+    max-width: 600px; 
+}
+
+.categories_title{
+    text-align: center; 
+    color: #444; 
+    font-size: 28px; 
+    margin-bottom: 15px; 
+}
+
+.all_categories a{
+    padding: 7px;
+    background-color: rgb(217, 210, 210);
+    border-radius: 10px;
+    display: inline-block;
+    margin-top: 10px;
+    text-decoration: none;
+    color: #333;
+}
+
+.gameinfo img{
+    width: 170px;
+    height: 210px;
+}
+
+.search_games {
+    text-align: center;
+    margin: 20px 0; 
+}
+
+.search_games input[type="text"], .search_games button {
+    padding: 10px;
+    font-size: 16px;
+    margin: 5px;
+}
+
+.categories ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.categories ul li {
+    margin: 10px 0;
+}
+
+.categories ul li a {
+    text-decoration: none; 
+    font-family: 'Arial', sans-serif; 
+    font-size: 1.1em; 
+    color: #333;
+}
+
+.categories ul li a:hover {
+    color: #007BFF;
+    font-weight: bold; 
+    cursor: pointer; 
+}
+
+.all_categories .active_category{
+    background-color: rgb(85, 132, 177);
+}
+
+.pagination a{
+    text-decoration: None;
+    color: #333;
+}
+
+.pagination .previouspage:hover{
+    background-color: #007BFF; 
+}
+
+.pagination .previouspage{
+    display: inline-block;
+    margin: block;
+    padding: 10px;
+    border-radius: 7px;
+    background-color: #b1adad;
+    margin-left: 150px;
+    width: 8%;
+    margin-top: 50px;
+}
+
+.pagination .nextpage:hover{
+    background-color: #007BFF; 
+}
+
+.pagination .nextpage{
+    display: inline-block;
+    margin: block;
+    padding: 10px;
+    border-radius: 7px;
+    background-color: #b1adad;
+    margin-left: 150px;
+    width: 8%;
+    margin-top: 50px;
+}
+
+.pagination .lastpage:hover{
+    background-color: #007BFF; 
+}
+
+.pagination .lastpage{
+    margin: block;
+    display: inline-block;
+    padding: 10px;
+    border-radius: 7px;
+    background-color: #b1adad;
+    margin-left: 150px;
+    width: 8%;
+    margin-top: 50px;
+}
+
+.loginform {
+    width: 300px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.loginform form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.loginform button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.game_card .addtocart{
+    width: 20px;
+    height: 20px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    margin-bottom: 10px;
+    float: right;
+}
+
+.gameinfo a{
+    background-color: green;
+    border-radius: 5px;
+    display: inline-block;
+    padding: 10px;
+    margin-left: 30%;
+    text-decoration: none;
+    color: #eaeaea
+}
+
+.check {
+    max-width: 400px;
+    margin: 30px auto;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+.check h2 {
+    font-size: 22px;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.check p {
+    font-size: 18px;
+    margin: 8px 0;
+    color: #555;
+}
+
+.checkout{
+    display: inline-block;
+    margin-top: 15px;
+    padding: 12px 20px;
+    background: #28a745;
+    color: white;
+    font-size: 18px;
+    text-decoration: none;
+    border-radius: 8px;
+}
+
+.checkout:hover {
+    background: #218838;
+}
+
+.game_card .remove{
+    width: 20px;
+    height: 20px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    float: right;
+}

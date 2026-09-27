@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %}Game Info{% endblock %}
+
+{% block content %}
+<h1>Game Info</h1>
+
+<div class="gameinfo">
+    <h2>{{game.name}}</h2>
+    <img src="{{ game.image.url }}" alt="No Image Found">
+    {% if game.release %}
+    <h3>Date of Release: {{game.release}}</h3>
+    {% endif %}
+    {% if game.price > 0 %}
+        {% if game.prev_price != game.price %}
+        <div class="prevprice">
+            ${{ game.prev_price }}
+        </div>
+        <div class="newprice">
+            ${{ game.price }}
+        </div>
+        {% else %}
+        <div class="newprice">
+            ${{ game.price }}
+        </div>
+        {% endif %}
+    {% else %}
+        <div class="newprice">
+            FREE
+        </div>
+    {% endif %}
+    <h2>Description:</h2>
+    <h3>{{game.description}}</h3>
+    <a href="/cart/{{game.id}}">BUY</a>
+</div>
+
+
+{% endblock %}

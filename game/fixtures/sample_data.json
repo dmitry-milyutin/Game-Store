@@ -1,0 +1,552 @@
+[
+{
+  "model": "game.category",
+  "pk": 1,
+  "fields": {
+    "name": "First Person Shooter"
+  }
+},
+{
+  "model": "game.category",
+  "pk": 2,
+  "fields": {
+    "name": "Tactical Shooter"
+  }
+},
+{
+  "model": "game.category",
+  "pk": 3,
+  "fields": {
+    "name": "Online Battle Arena"
+  }
+},
+{
+  "model": "game.category",
+  "pk": 4,
+  "fields": {
+    "name": "Action-Adventure"
+  }
+},
+{
+  "model": "game.category",
+  "pk": 5,
+  "fields": {
+    "name": "Open-World"
+  }
+},
+{
+  "model": "game.category",
+  "pk": 6,
+  "fields": {
+    "name": "Zombies Mode"
+  }
+},
+{
+  "model": "game.category",
+  "pk": 7,
+  "fields": {
+    "name": "Role-Playing Games"
+  }
+},
+{
+  "model": "game.category",
+  "pk": 8,
+  "fields": {
+    "name": "Survival"
+  }
+},
+{
+  "model": "game.category",
+  "pk": 9,
+  "fields": {
+    "name": "Platformers"
+  }
+},
+{
+  "model": "game.category",
+  "pk": 10,
+  "fields": {
+    "name": "Horror"
+  }
+},
+{
+  "model": "game.category",
+  "pk": 11,
+  "fields": {
+    "name": "Puzzle"
+  }
+},
+{
+  "model": "game.category",
+  "pk": 12,
+  "fields": {
+    "name": "Battle Royale"
+  }
+},
+{
+  "model": "game.game",
+  "pk": 1,
+  "fields": {
+    "name": "Counter-Strike:Global Offensive",
+    "description": "Counter-Strike: Global Offensive (CS: GO) is a tactical first-person shooter that pits teams of Terrorists and Counter-Terrorists against each other in fast-paced, objective-based matches. Players choose from a variety of weapons and equipment, focusing on precision, teamwork, and strategy to comple",
+    "image": "CS2_Cover_Art.jpg",
+    "release": null,
+    "prev_price": "24.99",
+    "price": "14.99",
+    "created_at": "2025-01-12",
+    "updated_at": "2024-12-23",
+    "rating": "4.5",
+    "categories": [
+      1,
+      2
+    ]
+  }
+},
+{
+  "model": "game.game",
+  "pk": 2,
+  "fields": {
+    "name": "Dota 2",
+    "description": "Dota 2 is a multiplayer online battle arena (MOBA) game developed by Valve, where two teams of five players compete to destroy the opposing team's Ancient, a large structure at their base. Players choose from a diverse roster of heroes, each with unique abilities and roles, working together to outma",
+    "image": "Dota_2_Steam_artwork.jpg",
+    "release": null,
+    "prev_price": "0.00",
+    "price": "0.00",
+    "created_at": "2025-01-12",
+    "updated_at": "2024-12-23",
+    "rating": "4.5",
+    "categories": [
+      3
+    ]
+  }
+},
+{
+  "model": "game.game",
+  "pk": 3,
+  "fields": {
+    "name": "Apex Legends",
+    "description": "Apex Legends is a free-to-play battle royale game developed by Respawn Entertainment, where squads of three players choose unique Legends, each with distinct abilities, to compete for survival in fast-paced, tactical matches. Set in the Titanfall universe, the game combines strategic team play, flui",
+    "image": "apex-legends-1o5il_DmpXIne.jpg",
+    "release": null,
+    "prev_price": "0.00",
+    "price": "0.00",
+    "created_at": "2025-01-12",
+    "updated_at": "2024-12-23",
+    "rating": "3",
+    "categories": [
+      1,
+      12
+    ]
+  }
+},
+{
+  "model": "game.game",
+  "pk": 4,
+  "fields": {
+    "name": "Grand Theft Auto V",
+    "description": "Grand Theft Auto V (GTA V) is an open-world action-adventure game developed by Rockstar Games, set in the sprawling city of Los Santos and its surrounding areas. The game follows the intertwined stories of three protagonists—Michael, Franklin, and Trevor—each with unique abilities, as they navigate",
+    "image": "Grand_Theft_Auto_V.png",
+    "release": null,
+    "prev_price": "35.99",
+    "price": "19.99",
+    "created_at": "2025-01-12",
+    "updated_at": "2024-12-23",
+    "rating": "4.5",
+    "categories": [
+      4,
+      5
+    ]
+  }
+},
+{
+  "model": "game.game",
+  "pk": 5,
+  "fields": {
+    "name": "Call of Duty: Black Ops",
+    "description": "Call of Duty: Black Ops is a first-person shooter developed by Treyarch, set during the Cold War era. The game features a gripping single-player campaign following covert operatives involved in top-secret missions, alongside its iconic multiplayer mode that emphasizes fast-paced combat and customiza",
+    "image": "Call_of_Duty_Black_Ops_6_Key_Art.png",
+    "release": "2024-10-25",
+    "prev_price": "62.25",
+    "price": "49.52",
+    "created_at": "2025-01-20",
+    "updated_at": "2024-12-23",
+    "rating": "3",
+    "categories": [
+      1,
+      2,
+      6,
+      12
+    ]
+  }
+},
+{
+  "model": "game.game",
+  "pk": 6,
+  "fields": {
+    "name": "Marvel Rivals",
+    "description": "Marvel Rivals is a 6v6 player-versus-player, third-person hero shooter title.[11] With the right combination of two or three characters, players can make use of \"Dynamic Hero Synergy\" which further maximize their playable character's combat efficiency.",
+    "image": "Marvel_Rivals_cover_art_xfuNW1S.jpg",
+    "release": null,
+    "prev_price": "0.00",
+    "price": "0.00",
+    "created_at": "2025-01-12",
+    "updated_at": "2025-01-11",
+    "rating": "4.5",
+    "categories": [
+      2,
+      3
+    ]
+  }
+},
+{
+  "model": "game.game",
+  "pk": 7,
+  "fields": {
+    "name": "Minecraft",
+    "description": "A sandbox game where players can explore, mine resources, craft, and build in an open-world environment. Includes survival and creative modes.",
+    "image": "MV5BNjQzMDlkNDctYmE3Yi00ZWFiLTlmOWYtMjI4MzQ4Y2JhZjY2XkEyXkFqcGc._V1_FMjpg_UX1000_.jpg",
+    "release": null,
+    "prev_price": "26.99",
+    "price": "26.99",
+    "created_at": "2025-01-12",
+    "updated_at": "2025-01-12",
+    "rating": "4.5",
+    "categories": [
+      8
+    ]
+  }
+},
+{
+  "model": "game.game",
+  "pk": 8,
+  "fields": {
+    "name": "Call of Duty: Warzone",
+    "description": "A free-to-play battle royale mode within the Call of Duty series, featuring fast-paced combat and a variety of weapons and vehicles.",
+    "image": "COD_Warzone_Cover_Art_jBMOd4S.jpg",
+    "release": null,
+    "prev_price": "0.00",
+    "price": "0.00",
+    "created_at": "2025-01-12",
+    "updated_at": "2025-01-12",
+    "rating": "4.5",
+    "categories": [
+      2,
+      12
+    ]
+  }
+},
+{
+  "model": "game.game",
+  "pk": 9,
+  "fields": {
+    "name": "The Witcher 3: Wild Hunt",
+    "description": "A sandbox game where players can explore, mine resources, craft, and build in an open-world environment. Includes survival and creative modes.",
+    "image": "Witcher_3_cover_art_B7ZSqZa.jpg",
+    "release": null,
+    "prev_price": "39.99",
+    "price": "39.99",
+    "created_at": "2025-01-12",
+    "updated_at": "2025-01-12",
+    "rating": "4",
+    "categories": [
+      5,
+      8
+    ]
+  }
+},
+{
+  "model": "game.game",
+  "pk": 10,
+  "fields": {
+    "name": "Fortnite",
+    "description": "A free-to-play battle royale game where players fight to be the last one standing on an island. Includes building mechanics and seasonal updates.",
+    "image": "MV5BMTZlMmIxM2EtN2Y4Zi00M2ZhLTk3NzgtNjJmZTU0MTQ3YjcwXkEyXkFqcGc._V1_FMjpg_UX1000_.jpg",
+    "release": "2017-07-21",
+    "prev_price": "0.00",
+    "price": "0.00",
+    "created_at": "2025-01-20",
+    "updated_at": "2025-01-12",
+    "rating": "4.5",
+    "categories": [
+      6,
+      8,
+      12
+    ]
+  }
+},
+{
+  "model": "game.game",
+  "pk": 11,
+  "fields": {
+    "name": "Resident Evil 4 (Remake)",
+    "description": "A remake of the classic 2005 survival horror game, where players control Leon S. Kennedy on a mission to rescue the U.S. president’s daughter from a mysterious cult in a rural Spanish village. It features updated graphics, mechanics, and intense combat sequences.",
+    "image": "71gcuHhHPcL._AC_UF10001000_QL80_.jpg",
+    "release": null,
+    "prev_price": "59.99",
+    "price": "59.99",
+    "created_at": "2025-01-12",
+    "updated_at": "2025-01-12",
+    "rating": "5",
+    "categories": [
+      10
+    ]
+  }
+},
+{
+  "model": "game.game",
+  "pk": 12,
+  "fields": {
+    "name": "Rust",
+    "description": "A multiplayer survival game where players must gather resources, build shelters, and fight against other players and the environment to survive. The game features an open-world setting and a strong focus on PvP interactions.",
+    "image": "co6mrg_8TasLZf.webp",
+    "release": null,
+    "prev_price": "39.99",
+    "price": "39.99",
+    "created_at": "2025-01-12",
+    "updated_at": "2025-01-12",
+    "rating": "4.5",
+    "categories": [
+      4,
+      5,
+      8
+    ]
+  }
+},
+{
+  "model": "game.game",
+  "pk": 13,
+  "fields": {
+    "name": "Hell Divers",
+    "description": "A top-down, cooperative twin-stick shooter set in a dystopian future where players control elite soldiers known as Helldivers, fighting to defend humanity against alien threats. The game emphasizes teamwork, strategic combat, and intense action.",
+    "image": "Helldivers_art_9Hpqjow.jpg",
+    "release": null,
+    "prev_price": "19.99",
+    "price": "19.99",
+    "created_at": "2025-01-12",
+    "updated_at": "2025-01-12",
+    "rating": "3.5",
+    "categories": [
+      2,
+      3,
+      4
+    ]
+  }
+},
+{
+  "model": "game.game",
+  "pk": 14,
+  "fields": {
+    "name": "Hell Divers 2",
+    "description": "The sequel to Helldivers, Helldivers 2 continues the co-op, twin-stick shooter experience with a more immersive, dynamic combat system. Players will face off against dangerous alien species in larger, more complex battlefields, emphasizing teamwork and strategic play.",
+    "image": "Helldivers2cover_o4wV6Tu.png",
+    "release": "2024-02-08",
+    "prev_price": "39.99",
+    "price": "39.99",
+    "created_at": "2025-01-20",
+    "updated_at": "2025-01-12",
+    "rating": "5",
+    "categories": [
+      2,
+      3,
+      4
+    ]
+  }
+},
+{
+  "model": "game.game",
+  "pk": 15,
+  "fields": {
+    "name": "Cyber Punk 2077",
+    "description": "A futuristic open-world RPG set in the sprawling city of Night City, with immersive storytelling and advanced cybernetic enhancements.",
+    "image": "Cyberpunk_2077_box_art_nRNbVkq.jpg",
+    "release": null,
+    "prev_price": "59.99",
+    "price": "59.99",
+    "created_at": "2025-01-19",
+    "updated_at": "2025-01-19",
+    "rating": "4.5",
+    "categories": [
+      4,
+      5,
+      7
+    ]
+  }
+},
+{
+  "model": "game.game",
+  "pk": 16,
+  "fields": {
+    "name": "Elden Ring",
+    "description": "An action RPG from the creators of Dark Souls, set in a vast, mysterious world filled with danger and lore.",
+    "image": "Elden_Ring_Box_art_k9OVkuy.jpg",
+    "release": null,
+    "prev_price": "69.99",
+    "price": "69.99",
+    "created_at": "2025-01-19",
+    "updated_at": "2025-01-19",
+    "rating": "5",
+    "categories": [
+      4,
+      5,
+      7
+    ]
+  }
+},
+{
+  "model": "game.game",
+  "pk": 17,
+  "fields": {
+    "name": "Red Dead Redemption 2",
+    "description": "A cinematic open-world game set in the Wild West, with breathtaking visuals and a compelling story.",
+    "image": "red_dead_redemption_2_game_cover_by_love_myart_dermu4d-fullview_PTHGtw2.jpg",
+    "release": null,
+    "prev_price": "49.99",
+    "price": "49.99",
+    "created_at": "2025-01-19",
+    "updated_at": "2025-01-19",
+    "rating": "5",
+    "categories": [
+      4,
+      5
+    ]
+  }
+},
+{
+  "model": "game.game",
+  "pk": 18,
+  "fields": {
+    "name": "Terraria",
+    "description": "A sandbox adventure game with crafting, building, and exploration in a 2D pixel art world.",
+    "image": "31376_IGDB-272x380_lgxCWYC.jpg",
+    "release": null,
+    "prev_price": "9.99",
+    "price": "9.99",
+    "created_at": "2025-01-19",
+    "updated_at": "2025-01-19",
+    "rating": "4.5",
+    "categories": [
+      8,
+      9,
+      11
+    ]
+  }
+},
+{
+  "model": "game.game",
+  "pk": 19,
+  "fields": {
+    "name": "Dark Souls III",
+    "description": "A challenging action RPG with punishing difficulty, intricate lore, and gothic fantasy settings.",
+    "image": "MV5BMjg5MGI3ZWUtODc4NS00Y2E2LWE1MTQtZDAwM2Q4ZDJlNzg5XkEyXkFqcGc._V1_.jpg",
+    "release": null,
+    "prev_price": "39.99",
+    "price": "39.99",
+    "created_at": "2025-01-19",
+    "updated_at": "2025-01-19",
+    "rating": "4",
+    "categories": [
+      4,
+      7
+    ]
+  }
+},
+{
+  "model": "game.game",
+  "pk": 20,
+  "fields": {
+    "name": "Overwatch 2",
+    "description": "A fast-paced multiplayer hero shooter with unique characters and engaging team-based gameplay.",
+    "image": "MV5BOGMxODVmNDgtZGE1Yy00Y2VlLTk3ZTMtYzU5YTcxODhiNzMxXkEyXkFqcGc._V1_.jpg",
+    "release": null,
+    "prev_price": "0.00",
+    "price": "0.00",
+    "created_at": "2025-01-19",
+    "updated_at": "2025-01-19",
+    "rating": "4",
+    "categories": [
+      1,
+      3
+    ]
+  }
+},
+{
+  "model": "game.game",
+  "pk": 21,
+  "fields": {
+    "name": "League of Legends",
+    "description": "A competitive MOBA game where players choose champions and battle in teams to destroy the enemy nexus.",
+    "image": "co49wj_5Ja0rgL.jpg",
+    "release": null,
+    "prev_price": "0.00",
+    "price": "0.00",
+    "created_at": "2025-01-19",
+    "updated_at": "2025-01-19",
+    "rating": "4",
+    "categories": [
+      2,
+      3
+    ]
+  }
+},
+{
+  "model": "game.game",
+  "pk": 22,
+  "fields": {
+    "name": "Valorant",
+    "description": "A tactical first-person shooter with a focus on precise aim and character abilities.",
+    "image": "Valorant_cover_guUbupZ.jpg",
+    "release": null,
+    "prev_price": "0.00",
+    "price": "0.00",
+    "created_at": "2025-01-19",
+    "updated_at": "2025-01-19",
+    "rating": "4",
+    "categories": [
+      1,
+      2,
+      3
+    ]
+  }
+},
+{
+  "model": "game.game",
+  "pk": 23,
+  "fields": {
+    "name": "Hollow Knight",
+    "description": "A beautifully hand-drawn Metroidvania game where you explore a vast, interconnected underground kingdom full of secrets and challenges.",
+    "image": "Hollow_Knight_VoidHeart_Edition_Xbox_One_Front_Cover_rfFP5WU.jpg",
+    "release": null,
+    "prev_price": "14.99",
+    "price": "14.99",
+    "created_at": "2025-01-19",
+    "updated_at": "2025-01-19",
+    "rating": "5",
+    "categories": [
+      4,
+      5,
+      8,
+      9
+    ]
+  }
+},
+{
+  "model": "game.game",
+  "pk": 24,
+  "fields": {
+    "name": "Battlefield 2042",
+    "description": "A large-scale multiplayer first-person shooter set in a near-future world ravaged by climate disasters. Players engage in epic battles with dynamic weather and destructible environments.",
+    "image": "Battlefield_2042_cover_art_S2S3jU7.jpg",
+    "release": null,
+    "prev_price": "59.99",
+    "price": "59.99",
+    "created_at": "2025-01-19",
+    "updated_at": "2025-01-19",
+    "rating": "4",
+    "categories": [
+      1,
+      2,
+      3
+    ]
+  }
+}
+]
