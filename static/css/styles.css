@@ -1,353 +1,687 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600;700&family=DM+Sans:wght@400;500;700&display=swap");
+ 
+/* ---------- Design tokens ---------- */
+:root {
+    --bg: #161a2b;
+    --surface: #20253b;
+    --raise: #2a3050;
+    --line: #363d62;
+    --text: #eceefa;
+    --muted: #9ba2c7;
+    --accent: #ffb547;
+    --accent-hover: #ffc873;
+    --accent-ink: #2a1a00;
+    --danger: #ff8a8a;
+ 
+    --font-display: "Chakra Petch", "Trebuchet MS", sans-serif;
+    --font-body: "DM Sans", "Helvetica Neue", Arial, sans-serif;
+ 
+    --page: 1200px;
+    --radius: 12px;
+}
+ 
+/* ---------- Base ---------- */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+ 
 body {
-    font-family: Arial, sans-serif;
     margin: 0;
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.55;
+    background-color: var(--bg);
+    color: var(--text);
+}
+ 
+h1, h2, h3 {
+    font-family: var(--font-display);
+    line-height: 1.2;
+    color: var(--text);
+}
+ 
+a {
+    color: var(--text);
+}
+ 
+a:focus-visible,
+button:focus-visible,
+input:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+}
+ 
+/* Page titles that sit directly in <body> (e.g. "Game Info") */
+body > h1 {
+    max-width: 1000px;
+    margin: 40px auto 16px;
     padding: 0;
-    background-color: #f4f4f4;
-    color: #333;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--muted);
 }
-
+ 
+/* ---------- Navigation ---------- */
 .navigation {
-    background-color: #222;
-    padding: 10px 0;
-    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 4px 8px;
+    padding: 14px 24px;
+    background-color: rgba(22, 26, 43, 0.92);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--line);
 }
-
-.navigation a {
-    color: #fff;
+ 
+/* Brand name added by CSS, so no HTML change is needed */
+.navigation::before {
+    content: "Playtica";
+    margin-right: auto;
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--accent);
+}
+ 
+.navigation a,
+.navigation button {
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--muted);
     text-decoration: none;
-    margin: 0 15px;
-    font-weight: bold;
-    font-size: 20px;
 }
-
-.navigation a:hover {
-    text-decoration: underline;
+ 
+.navigation a:hover,
+.navigation button:hover {
+    color: var(--text);
+    background-color: var(--raise);
 }
-
-.navigation form{
+ 
+.navigation form {
     display: inline-block;
+    margin: 0;
 }
-
-.navigation button{
+ 
+.navigation button {
     background: none;
     border: none;
-    color: white;
-    font-weight: bold;
-    font-size: 20px;
-}
-
-.navigation button:hover{
-    text-decoration: underline;
-}
-
-.welcome_text h1 {
-    font-size: 2.5em;
-    color: #222;
-}
-
-.welcome_text p {
-    font-size: 1.2em;
-    margin-top: 10px;
-    line-height: 1.6;
-}
-
-.why_us {
-    margin-top: 40px;
-    text-align: center;
-}
-
-.why_us h2 {
-    font-size: 2em;
-    color: #444;
-}
-
-.why_us > div {
-    display: inline-block;
-    width: 30%;
-    margin: 1%;
-    padding: 20px;
-    background-color: #e9f7f7;
-    border: 1px solid #bce4e4;
-    border-radius: 8px;
-}
-
-.why_us h3 {
-    margin-bottom: 10px;
-    color: #006666;
-}
-
-
-.why_us p {
-    font-size: 1em;
-    color: #333;
-    line-height: 1.5;
-}
-
-.top_picks {
-    margin: 20px;
-    text-align: center;
-}
-
-.top_picks h2 {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 15px;
-}
-
-.games_row {
-    display: flex;
-    justify-content: space-around;
-    gap: 15px;
-    flex-wrap: wrap;
-}
-
-.game_card {
-    display: inline-block;
-    width: 180px;
-    text-align: center;
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 10px;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-    text-decoration: none;
-}
-
-.game_card h3{
-    font-size: 16px;
-    margin-bottom: 10px;
-    text-decoration: none;
-    color: #333;
-}
-
-.game_card img {
-    width: 170px;
-    height: 210px;
-    border-radius: 5px;
-    margin-bottom: 10px;
-}
-
-.newprice {
-    color: green;
-    font-weight: bold; 
-    font-size: 1.2em; 
-}
-
-.prevprice {
-    color: red;
-    font-weight: bold; 
-    text-decoration: line-through; 
-    font-size: 1em; 
-}
-
-.all_games h2{
-    text-align: center
-}
-
-.categories {
-    font-family: 'Arial', sans-serif; 
-    background-color: #f9f9f9; 
-    border: 1px solid #ddd;
-    border-radius: 8px; 
-    padding: 20px; 
-    margin: 20px auto; 
-    max-width: 600px; 
-}
-
-.categories_title{
-    text-align: center; 
-    color: #444; 
-    font-size: 28px; 
-    margin-bottom: 15px; 
-}
-
-.all_categories a{
-    padding: 7px;
-    background-color: rgb(217, 210, 210);
-    border-radius: 10px;
-    display: inline-block;
-    margin-top: 10px;
-    text-decoration: none;
-    color: #333;
-}
-
-.gameinfo img{
-    width: 170px;
-    height: 210px;
-}
-
-.search_games {
-    text-align: center;
-    margin: 20px 0; 
-}
-
-.search_games input[type="text"], .search_games button {
-    padding: 10px;
-    font-size: 16px;
-    margin: 5px;
-}
-
-.categories ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-.categories ul li {
-    margin: 10px 0;
-}
-
-.categories ul li a {
-    text-decoration: none; 
-    font-family: 'Arial', sans-serif; 
-    font-size: 1.1em; 
-    color: #333;
-}
-
-.categories ul li a:hover {
-    color: #007BFF;
-    font-weight: bold; 
-    cursor: pointer; 
-}
-
-.all_categories .active_category{
-    background-color: rgb(85, 132, 177);
-}
-
-.pagination a{
-    text-decoration: None;
-    color: #333;
-}
-
-.pagination .previouspage:hover{
-    background-color: #007BFF; 
-}
-
-.pagination .previouspage{
-    display: inline-block;
-    margin: block;
-    padding: 10px;
-    border-radius: 7px;
-    background-color: #b1adad;
-    margin-left: 150px;
-    width: 8%;
-    margin-top: 50px;
-}
-
-.pagination .nextpage:hover{
-    background-color: #007BFF; 
-}
-
-.pagination .nextpage{
-    display: inline-block;
-    margin: block;
-    padding: 10px;
-    border-radius: 7px;
-    background-color: #b1adad;
-    margin-left: 150px;
-    width: 8%;
-    margin-top: 50px;
-}
-
-.pagination .lastpage:hover{
-    background-color: #007BFF; 
-}
-
-.pagination .lastpage{
-    margin: block;
-    display: inline-block;
-    padding: 10px;
-    border-radius: 7px;
-    background-color: #b1adad;
-    margin-left: 150px;
-    width: 8%;
-    margin-top: 50px;
-}
-
-.loginform {
-    width: 300px;
-    margin: 50px auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    text-align: center;
-}
-
-.loginform form {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.loginform button {
-    background-color: #007bff;
-    color: white;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
     cursor: pointer;
 }
-
-.game_card .addtocart{
-    width: 20px;
-    height: 20px;
-    border-radius: 5px;
-    margin-bottom: 10px;
-    margin-bottom: 10px;
-    float: right;
+ 
+/* ---------- Game cards (the centrepiece) ---------- */
+.game_card {
+    position: relative;
+    display: inline-flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0 10px;
+    width: 200px;
+    padding: 0 0 14px;
+    vertical-align: top;
+    background-color: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    overflow: hidden;
 }
-
-.gameinfo a{
-    background-color: green;
-    border-radius: 5px;
-    display: inline-block;
-    padding: 10px;
-    margin-left: 30%;
+ 
+.game_card:hover {
+    border-color: var(--accent);
+}
+ 
+/* Cover art: moved to the top of the card and shaped like a game box */
+.game_card > img {
+    order: -1;
+    flex-basis: 100%;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+    margin: 0 0 12px;
+}
+ 
+/* Title link spans the full width under the cover */
+.game_card > a:nth-of-type(2) {
+    flex-basis: 100%;
+    padding: 0 14px;
     text-decoration: none;
-    color: #eaeaea
 }
-
-.check {
+ 
+.game_card h3 {
+    margin: 0 0 6px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text);
+}
+ 
+.game_card > a:nth-of-type(2):hover h3 {
+    color: var(--accent);
+}
+ 
+/* Add-to-cart / remove icon: a round button floating over the cover */
+.game_card > a:first-child {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 1;
+    line-height: 0;
+}
+ 
+.game_card .addtocart,
+.game_card .remove {
+    width: 36px;
+    height: 36px;
+    padding: 8px;
+    background-color: var(--accent);
+    border-radius: 50%;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+ 
+.game_card > a:first-child:hover .addtocart,
+.game_card > a:first-child:hover .remove {
+    background-color: var(--accent-hover);
+}
+ 
+/* Prices sit side by side under the title */
+.game_card .prevprice {
+    margin-left: 14px;
+}
+ 
+/* A card with no discount has only .newprice, so it needs the left margin instead */
+.game_card > img + .newprice {
+    margin-left: 14px;
+}
+ 
+.newprice {
+    font-family: var(--font-display);
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--accent);
+}
+ 
+.prevprice {
+    font-size: 0.9rem;
+    color: var(--muted);
+    text-decoration: line-through;
+}
+ 
+/* ---------- Home ---------- */
+.top_picks {
+    max-width: var(--page);
+    margin: 0 auto;
+    padding: 40px 24px;
+}
+ 
+.top_picks > h2,
+.all_games > h2 {
+    margin: 0 0 20px;
+    font-size: 1.6rem;
+    text-align: left;
+}
+ 
+.games_row {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 24px;
+}
+ 
+.games_row .game_card {
+    width: auto;
+}
+ 
+.content {
+    padding-top: 56px;
+    text-align: left;
+}
+ 
+.welcome_text {
+    max-width: 640px;
+}
+ 
+.welcome_text h1 {
+    margin: 0 0 12px;
+    font-size: clamp(2.2rem, 5vw, 3.4rem);
+    font-weight: 700;
+}
+ 
+.welcome_text p {
+    margin: 0;
+    font-size: 1.15rem;
+    color: var(--muted);
+}
+ 
+.why_us {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 48px;
+}
+ 
+.why_us h2 {
+    grid-column: 1 / -1;
+    margin: 0;
+    font-size: 1.6rem;
+}
+ 
+.why_us > div {
+    padding: 24px;
+    background-color: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+}
+ 
+.why_us h3 {
+    margin: 0 0 8px;
+    font-size: 1.2rem;
+    color: var(--accent);
+}
+ 
+.why_us p {
+    margin: 0;
+    color: var(--muted);
+}
+ 
+/* ---------- Game search ---------- */
+.search_games {
+    max-width: var(--page);
+    margin: 0 auto;
+    padding: 40px 24px 8px;
+}
+ 
+.search_games form {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+}
+ 
+.search_games label {
+    flex-basis: 100%;
+    font-weight: 500;
+    color: var(--muted);
+}
+ 
+.search_games input[type="text"] {
+    flex: 1 1 260px;
+    padding: 12px 16px;
+    font: inherit;
+    color: var(--text);
+    background-color: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+}
+ 
+.search_games input[type="text"]::placeholder {
+    color: var(--muted);
+}
+ 
+.search_games button {
+    padding: 12px 22px;
+    font: inherit;
+    font-weight: 700;
+    color: var(--accent-ink);
+    background-color: var(--accent);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+ 
+.search_games button:hover {
+    background-color: var(--accent-hover);
+}
+ 
+.all_categories {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    max-width: var(--page);
+    margin: 0 auto;
+    padding: 12px 24px 32px;
+}
+ 
+.all_categories a {
+    padding: 6px 14px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--muted);
+    text-decoration: none;
+    background-color: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 999px;
+}
+ 
+.all_categories a:hover {
+    color: var(--text);
+    border-color: var(--muted);
+}
+ 
+.all_categories .active_category {
+    color: var(--accent-ink);
+    background-color: var(--accent);
+    border-color: var(--accent);
+}
+ 
+.all_categories .active_category:hover {
+    color: var(--accent-ink);
+}
+ 
+.all_games {
+    max-width: var(--page);
+    margin: 0 auto;
+    padding: 0 24px;
+}
+ 
+/* ---------- Pagination ---------- */
+.pagination {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    padding: 40px 24px 64px;
+}
+ 
+.pagination a {
+    display: block;
+    padding: 10px 20px;
+    font-weight: 500;
+    text-decoration: none;
+    background-color: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 999px;
+}
+ 
+.pagination a:hover {
+    color: var(--accent-ink);
+    background-color: var(--accent);
+    border-color: var(--accent);
+}
+ 
+/* ---------- Categories page ---------- */
+.categories {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 0 24px;
+}
+ 
+.categories_title {
+    margin: 0 0 20px;
+    font-size: 2rem;
+}
+ 
+.categories ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+    gap: 12px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+ 
+.categories ul li a {
+    display: block;
+    padding: 16px 18px;
+    font-weight: 500;
+    text-decoration: none;
+    background-color: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+}
+ 
+.categories ul li a:hover {
+    color: var(--accent);
+    border-color: var(--accent);
+}
+ 
+/* ---------- Single game page ---------- */
+.gameinfo {
+    display: flow-root;
+    max-width: 1000px;
+    margin: 0 auto 64px;
+    padding: 32px;
+    background-color: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+}
+ 
+.gameinfo > h2:first-child {
+    margin: 0 0 24px;
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
+}
+ 
+.gameinfo > img {
+    float: left;
+    width: 280px;
+    height: auto;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+    margin: 0 36px 16px 0;
+    border-radius: 10px;
+}
+ 
+/* Keeps the text in a column beside the cover instead of wrapping under it */
+.gameinfo > :not(img):not(h2:first-child) {
+    overflow: hidden;
+}
+ 
+.gameinfo > img + h3 {
+    margin: 0 0 16px;
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--muted);
+}
+ 
+.gameinfo .prevprice {
+    font-size: 1rem;
+}
+ 
+.gameinfo .newprice {
+    font-size: 1.8rem;
+}
+ 
+.gameinfo > h2:not(:first-child) {
+    margin: 28px 0 8px;
+    font-size: 1.1rem;
+    color: var(--muted);
+}
+ 
+.gameinfo > h2:not(:first-child) + h3 {
+    margin: 0 0 28px;
+    font-family: var(--font-body);
+    font-size: 1.05rem;
+    font-weight: 400;
+    line-height: 1.65;
+    max-width: 60ch;
+}
+ 
+.gameinfo > a {
+    display: inline-block;
+    padding: 14px 36px;
+    font-weight: 700;
+    color: var(--accent-ink);
+    text-decoration: none;
+    background-color: var(--accent);
+    border-radius: 10px;
+}
+ 
+.gameinfo > a:hover {
+    background-color: var(--accent-hover);
+}
+ 
+/* ---------- Login & registration forms ---------- */
+.loginform,
+.registration {
     max-width: 400px;
-    margin: 30px auto;
-    padding: 20px;
-    background: #f8f9fa;
-    border-radius: 12px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    text-align: center;
-    font-family: Arial, sans-serif;
+    margin: 64px auto;
+    padding: 32px;
+    background-color: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 16px;
 }
-
-.check h2 {
-    font-size: 22px;
-    margin-bottom: 15px;
-    color: #333;
+ 
+.loginform form,
+.registration form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
 }
-
-.check p {
-    font-size: 18px;
-    margin: 8px 0;
-    color: #555;
+ 
+.loginform label,
+.registration label {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--muted);
 }
-
-.checkout{
-    display: inline-block;
-    margin-top: 15px;
-    padding: 12px 20px;
-    background: #28a745;
-    color: white;
-    font-size: 18px;
-    text-decoration: none;
+ 
+.loginform input,
+.registration input {
+    width: 100%;
+    padding: 12px 14px;
+    font: inherit;
+    color: var(--text);
+    background-color: var(--bg);
+    border: 1px solid var(--line);
     border-radius: 8px;
 }
-
-.checkout:hover {
-    background: #218838;
+ 
+.loginform input:focus,
+.registration input:focus {
+    border-color: var(--accent);
+    outline: none;
 }
-
-.game_card .remove{
-    width: 20px;
-    height: 20px;
-    border-radius: 5px;
-    margin-bottom: 10px;
-    float: right;
+ 
+.registration .helptext {
+    display: block;
+    margin-top: 6px;
+    font-size: 0.82rem;
+    color: var(--muted);
+}
+ 
+.registration .helptext ul {
+    margin: 4px 0 0;
+    padding-left: 18px;
+}
+ 
+.loginform .errorlist,
+.registration .errorlist {
+    margin: 0 0 6px;
+    padding: 0;
+    list-style: none;
+    font-size: 0.88rem;
+    color: var(--danger);
+}
+ 
+.loginform button,
+.registration button {
+    margin-top: 6px;
+    padding: 13px;
+    font: inherit;
+    font-weight: 700;
+    color: var(--accent-ink);
+    background-color: var(--accent);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+ 
+.loginform button:hover,
+.registration button:hover {
+    background-color: var(--accent-hover);
+}
+ 
+/* ---------- Cart ---------- */
+.check {
+    max-width: 440px;
+    margin: 40px auto 32px;
+    padding: 28px;
+    text-align: center;
+    background-color: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+}
+ 
+.check h2 {
+    margin: 0 0 16px;
+    font-size: 1.5rem;
+}
+ 
+.check p {
+    margin: 8px 0;
+    color: var(--muted);
+}
+ 
+.check strong {
+    color: var(--text);
+}
+ 
+.checkout {
+    display: inline-block;
+    margin-top: 18px;
+    padding: 13px 28px;
+    font-weight: 700;
+    color: var(--accent-ink);
+    text-decoration: none;
+    background-color: var(--accent);
+    border-radius: 10px;
+}
+ 
+.checkout:hover {
+    background-color: var(--accent-hover);
+}
+ 
+.check + br {
+    display: none;
+}
+ 
+/* Cart cards aren't inside .games_row, so give them their own spacing */
+.check ~ .game_card {
+    margin: 0 0 24px 24px;
+}
+ 
+/* ---------- Small screens ---------- */
+@media (max-width: 640px) {
+    .navigation::before {
+        flex-basis: 100%;
+    }
+ 
+    .games_row {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 16px;
+    }
+ 
+    .why_us {
+        grid-template-columns: 1fr;
+    }
+ 
+    body > h1 {
+        padding: 0 16px;
+    }
+ 
+    .gameinfo {
+        margin: 0 16px 48px;
+        padding: 20px;
+    }
+ 
+    .gameinfo > img {
+        float: none;
+        display: block;
+        width: 100%;
+        max-width: 320px;
+        margin: 0 0 20px;
+    }
+ 
+    .check ~ .game_card {
+        width: calc(50% - 30px);
+        margin: 0 0 16px 20px;
+    }
 }
