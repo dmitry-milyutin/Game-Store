@@ -39,7 +39,7 @@ venv\Scripts\activate           # Windows
 **3. Install dependencies**
 
 ```bash
-python -m pip install -r requirements.txt
+python -m pip install -r req.txt
 ```
 
 **4. Create a `.env` file** in the project root (next to `manage.py`):
