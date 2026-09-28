@@ -11,6 +11,8 @@ A game storefront built with Django. Users can browse and search a catalogue of 
 - **Stripe checkout**: charges the real cart contents, and the cart is only cleared after Stripe confirms the payment
 - **Admin panel**: manage games, categories and carts through Django admin
 
+![homepage](Demo/homepage.png)
+
 ## Tech stack
 
 - Python 3.12+
@@ -25,7 +27,7 @@ A game storefront built with Django. Users can browse and search a catalogue of 
 
 ```bash
 git clone https://github.com/dmitry-milyutin/game-store.git
-cd playtica
+cd Game Store
 ```
 
 **2. Create and activate a virtual environment**
