@@ -24,7 +24,7 @@ A game storefront built with Django. Users can browse and search a catalogue of 
 **1. Clone the repo and enter the folder**
 
 ```bash
-git clone https://github.com/dmitry-milyutin/playtica.git
+git clone https://github.com/dmitry-milyutin/game-store.git
 cd playtica
 ```
 

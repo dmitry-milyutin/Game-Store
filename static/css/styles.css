@@ -229,8 +229,11 @@ body > h1 {
     width: auto;
 }
  
+
 .content {
-    padding-top: 56px;
+    max-width: var(--page);
+    margin: 0 auto;
+    padding: 16px 24px 64px;
     text-align: left;
 }
  
