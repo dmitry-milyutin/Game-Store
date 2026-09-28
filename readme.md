@@ -11,7 +11,6 @@ A game storefront built with Django. Users can browse and search a catalogue of 
 - **Stripe checkout**: charges the real cart contents, and the cart is only cleared after Stripe confirms the payment
 - **Admin panel**: manage games, categories and carts through Django admin
 
-![homepage](Demo/homepage.png)
 
 ## Tech stack
 
@@ -95,3 +94,6 @@ templates/       HTML templates
 static/          CSS and icons
 media/           Game cover images
 ```
+
+
+![homepage](Demo/homepage.png)
