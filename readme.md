@@ -97,3 +97,9 @@ media/           Game cover images
 
 
 ![homepage](Demo/homepage.png)
+
+![All games](Demo/pagination.png)
+
+![Search](Demo/search-categories.png)
+
+![Payments](Demo/stripe-payments.png)
